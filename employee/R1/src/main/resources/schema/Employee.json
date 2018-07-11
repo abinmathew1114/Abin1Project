@@ -1,0 +1,1 @@
+{"type":"object","properties":{"empid":{"type":"string","format":""},"name":{"type":"string","format":""},"age":{"type":"integer","format":"int32"},"city":{"type":"string","format":""}},"required":["empid","name","age"]}

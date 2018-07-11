@@ -1,0 +1,402 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "delete"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": false,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "applicationFirst",
+        "customHeaderName": "version"
+      },
+      "apiData": {
+        "returnDataType": "No"
+      },
+      "records": {
+        "limit": 10
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "unitTesting": {
+        "UnitTestingEnable": true,
+        "testingTypes": [
+          "unitTesting",
+          "pactTesting"
+        ]
+      },
+      "security": {
+        "enabled": false,
+        "type": "none"
+      },
+      "logging": {
+        "enabled": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "java",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "",
+        "appMemory": "",
+        "revisionName": "R1"
+      },
+      "docker": {
+        "cwd": "TempSystem/fca_group03072018030938/Abin1Project/employee/R1",
+        "publicIP": "localhost",
+        "revisionName": "R1"
+      },
+      "javaOptions": {
+        "basePackage": "com.example",
+        "packagingType": "jar",
+        "dependencyManagementType": "maven",
+        "framework": [
+          "spring",
+          "spring-boot"
+        ],
+        "springBootDeployment": "tomcat"
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "Employee",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"empid\":{\"type\":\"string\",\"format\":\"\"},\"name\":{\"type\":\"string\",\"format\":\"\"},\"age\":{\"type\":\"integer\",\"format\":\"int32\"},\"city\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"empid\",\"name\",\"age\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "empid": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "age": {
+                "type": "integer"
+              },
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "empid",
+              "name",
+              "age"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "queryParameters": {
+            "get": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              },
+              {
+                "name": "id",
+                "in": "query",
+                "description": "Employee id to be retrieved",
+                "required": true,
+                "isArray": false,
+                "type": "string",
+                "format": ""
+              }
+            ],
+            "put": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              },
+              {
+                "name": "id",
+                "in": "query",
+                "description": "",
+                "required": true,
+                "isArray": false,
+                "type": "string",
+                "format": ""
+              }
+            ],
+            "post": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              },
+              {
+                "name": "id",
+                "in": "query",
+                "description": "",
+                "required": true,
+                "isArray": false,
+                "type": "string",
+                "format": ""
+              }
+            ],
+            "delete": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              },
+              {
+                "name": "id",
+                "in": "query",
+                "description": "",
+                "required": true,
+                "isArray": false,
+                "type": "string",
+                "format": ""
+              }
+            ]
+          },
+          "uniqueParameter": "empid",
+          "fake_data": null
+        }
+      ]
+    },
+    "caller_type": "ui",
+    "javaOptions": {
+      "basePackage": "com.example",
+      "packagingType": "jar",
+      "dependencyManagementType": "maven",
+      "framework": [
+        "spring",
+        "spring-boot"
+      ],
+      "springBootDeployment": "tomcat"
+    },
+    "apiOverview": {
+      "apiName": "employee",
+      "apiBasePath": "/api",
+      "apiDescription": "First draft version of API for Employee Information"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "Employee",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"empid\":{\"type\":\"string\",\"format\":\"\"},\"name\":{\"type\":\"string\",\"format\":\"\"},\"age\":{\"type\":\"integer\",\"format\":\"int32\"},\"city\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"empid\",\"name\",\"age\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "empid": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "age": {
+              "type": "integer"
+            },
+            "city": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "empid",
+            "name",
+            "age"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "queryParameters": {
+          "get": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            },
+            {
+              "name": "id",
+              "in": "query",
+              "description": "Employee id to be retrieved",
+              "required": true,
+              "isArray": false,
+              "type": "string",
+              "format": ""
+            }
+          ],
+          "put": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            },
+            {
+              "name": "id",
+              "in": "query",
+              "description": "",
+              "required": true,
+              "isArray": false,
+              "type": "string",
+              "format": ""
+            }
+          ],
+          "post": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            },
+            {
+              "name": "id",
+              "in": "query",
+              "description": "",
+              "required": true,
+              "isArray": false,
+              "type": "string",
+              "format": ""
+            }
+          ],
+          "delete": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            },
+            {
+              "name": "id",
+              "in": "query",
+              "description": "",
+              "required": true,
+              "isArray": false,
+              "type": "string",
+              "format": ""
+            }
+          ]
+        },
+        "uniqueParameter": "empid",
+        "fake_data": null,
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "empid": {
+              "type": "string",
+              "format": ""
+            },
+            "name": {
+              "type": "string",
+              "format": ""
+            },
+            "age": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "city": {
+              "type": "string",
+              "format": ""
+            }
+          },
+          "required": [
+            "empid",
+            "name",
+            "age"
+          ]
+        }
+      }
+    ]
+  }
+}
