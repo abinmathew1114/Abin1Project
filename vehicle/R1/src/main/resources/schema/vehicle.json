@@ -1,0 +1,1 @@
+{"type":"object","properties":{"vin":{"type":"string","format":""},"model":{"type":"string","format":""},"year":{"type":"string","format":""},"color":{"type":"string","format":""}},"required":["vin","model","year"]}
